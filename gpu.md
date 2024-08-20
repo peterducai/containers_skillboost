@@ -17,6 +17,8 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/cdi-sup
 
 INTEL:  
 
+https://github.com/intel/ai-containers/blob/v0.3.5/docs/README.md
+
 https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/gpu/README.md
 https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/gpu/USAGE.md
 https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/CLUSTER_SETUP.md
@@ -28,6 +30,8 @@ https://github.com/intel/compute-samples
 https://github.com/intel/ai-reference-models
 https://dgpu-docs.intel.com/solutions/max-sw/index.html
 
+
+check also https://github.com/intel/ai-reference-models/blob/main/quickstart/language_modeling/tensorflow/bert_large/inference/cpu/README.md 
 
 
 AMD:
