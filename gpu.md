@@ -1,5 +1,7 @@
 # GPU
 
+TODO: study CDI spec https://github.com/cncf-tags/container-device-interface
+
 
 podman run --device=host-device[:container-device][:permissions] 
 
