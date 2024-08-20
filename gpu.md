@@ -3,6 +3,8 @@
 
 podman run --device=host-device[:container-device][:permissions] 
 
+podman run --device /dev/video0 --group-add keep-group 
+
 https://www.redhat.com/sysadmin/files-devices-podman
 
 CDI:
@@ -19,6 +21,11 @@ https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/gpu
 https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/gpu/USAGE.md
 https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/CLUSTER_SETUP.md
 https://www.kernel.org/doc/html/v4.14/gpu/i915.html#c.intel_vgt_balloon
+
+https://github.com/intel/compute-runtime
+https://www.intel.com/content/www/us/en/developer/articles/tool/opencl-drivers.html
+https://github.com/intel/compute-samples
+
 
 
 AMD:
