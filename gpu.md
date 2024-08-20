@@ -25,6 +25,8 @@ https://www.kernel.org/doc/html/v4.14/gpu/i915.html#c.intel_vgt_balloon
 https://github.com/intel/compute-runtime
 https://www.intel.com/content/www/us/en/developer/articles/tool/opencl-drivers.html
 https://github.com/intel/compute-samples
+https://github.com/intel/ai-reference-models
+https://dgpu-docs.intel.com/solutions/max-sw/index.html
 
 
 
