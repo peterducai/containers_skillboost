@@ -14,36 +14,19 @@ STATUS:
 2. Operator should be created by vendor and we have
    NVIDIA: https://catalog.redhat.com/software/container-stacks/detail/5faa9cb6b72282d84b742c6e?gs&q=nvidia
    INTEL: https://catalog.redhat.com/software/containers/intel/intel-data-center-gpu-driver-container/6495ee55c8b2461e35fb8264?gs&q=intel
-   AMD: no operator
+          https://github.com/intel/intel-data-center-gpu-driver-for-openshift/blob/main/README.md
+   AMD: no OCP operator
 3. Running with podman is easy with --device= 
 
 
 ## INTEL
 
+We recommend users use the Kernel Module Management (KMM) operator to install and manage the Intel Data Center GPU driver on RHOCP. The KMM operator can be used to deploy all the necessary driver components as well as the firmware from within the driver container image.
+
 CRDs for Intel are following
 
 
-deployment/ directory contains all required YAMLs:
-deployments/gpu/static/crds/ - Custom Resource Definitions the GPU resource driver uses.
 
-GpuAllocationState - main object of communication between controller and kubelet-plugins
-GpuClaimParameters - used in ResourceClaims to specify details about requested HW, e.g. quantity, type, minimum requested memory, millicores.
-GpuClassParameters - used in ResourceClass to customize the allocation logic, e.g. shared or exclusive GPU allocation, or allocation of all devices at once for monitoring purposes.
-deployments/gpu/resource-class.yaml - pre-defined ResourceClasses that ResourceClaims can refer to.
-
-deployments/gpu/resource-driver-namespace.yaml - Kubernetes namespace for GPU Resource Driver.
-
-deployments/gpu/resource-defaults.yaml - ConfigMap allowing customizing otherwise hardcoded default values.
-
-deployments/gpu/resource-driver.yaml - actual resource driver with service account and RBAC policy
-
-controller Deployment - controller of the GPU resource driver make decisions on what GPU or SR-IOV VF should be allocated to a particular ResourceClaim based on the GpuClaimParameters and allocatableDevices of particular Kubernetes node
-kubelet-plugin DaemonSet - node-agent, it performs three functions:
-supported hardware discovery on Kubernetes cluster node and it's announcement to the GpuAllocationState that is specific to the node.
-preparation of the hardware allocated to the ResourceClaims for the Pod that is being started on the node.
-unpreparation of the hardware allocated to the ResourceClaims for the Pod that is being started on the node
-
-https://github.com/intel/intel-resource-drivers-for-kubernetes/blob/main/doc/gpu/USAGE.md#deployment-directory-contains-all-required-yamls
 
 
 
@@ -63,3 +46,13 @@ https://github.com/NVIDIA/nvidia-container-toolkit
 ## AMD
 
 TODO: for AMD check https://github.com/ROCm/k8s-device-plugin?tab=readme-ov-file
+
+
+
+
+
+TODO:
+
+podman run --env DISPLAY --security-opt label=type:container_runtime_t
+
+https://discussion.fedoraproject.org/t/how-can-i-create-a-container-with-podman-that-runs-graphical-application-in-isolation-from-the-file-system/73520/5
